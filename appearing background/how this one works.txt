@@ -1,0 +1,12 @@
+  Двигающийся круг - отдельный абсолютно позиционированный блок. При событии
+mousemove в script.js, отступы блока слева и сверху становятся равными
+соответственно коориднате мыши по оси Х и по оси У.
+  Фон установлен не родительскому блоку, а самому блоку .circle. Вместе с
+изменением отступов при движении мыши меняется также и background-position,
+создавая нужный эффект.
+
+  The moving circle is an absolute positioned block. With mousemove event its
+left and right properties become equal to the current mouse coordinates.
+  Background is set not to the parental block but to the .circle itself, getting
+repositioned at the same time as the .circle is repositioned, creating the
+effect.
