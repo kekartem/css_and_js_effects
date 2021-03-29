@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    background: black;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.circle {
+    position: relative;
+    z-index: 999;
+    transform: translate(100vw, 150vh);
+    width: 200px;
+    height: 200px;
+    background: #ffc2cc;
+    border-radius: 50%;
+    background: url('background.jpeg');
+}
