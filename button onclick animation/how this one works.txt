@@ -1,0 +1,30 @@
+  Двигающийся круг - отдельный абсолютно позиционированный блок. При событии
+click в script.js, отступы блока слева и сверху становятся равными
+соответственно коориднате мыши по оси Х и по оси У (не совсем, ниже - подробнее).
+  При обработке события таймер setInterval каждые 3 миллисекунды увеличивает
+ширину .circle и уменьшает opacity, пока ширина не станет равна 100px, а
+opacity - 0.
+  Таймер setInterval прерывается, если ширина .circle достигла 100px. Чтобы
+заставить "анимацию" повторяться снова, если предыдущая ещё не завершилась -
+при обработке события click первым делом проверяется, не был ли таймер запущен
+до этого. Если он уже был запущен - он сбрасывается и процесс анимации
+начинается заново, уже по новым координатам.
+  Родительский блок .button должен иметь position: relative, чтобы свойство
+overflow: hidden работало для абсолютно позиционированного дочернего .circle.
+Поэтому отступы для блока нужно считать не от границ viewport, а от границ
+родителя.
+
+  The moving circle is an absolute positioned block. With click event its
+left and right properties become equal to the current mouse coordinates (not
+exactly, to be honest. Details below).
+  SetInterval timer is increasing width value of the circle until it's equal to
+100px and decreases opacity until it's zero.
+  The timer automatically stops if .circle width had reached it's max value of
+100px. To make the 'animation' happen with another click (even if the previous
+one is still going), first thing to do while handling click event is to check if
+the timer has been set before (timer is a global variable). In case it has -
+it stops and the animation starts again with new coordinates.
+  Parental block .button has to be relative positioned to make overflow: hidden
+property work for overlapping absolute positioned child .circle. That's why
+.circle's offsets should be calculated not from the viewport sides but from
+it's parent sides, which is .button.
